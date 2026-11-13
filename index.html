@@ -5,53 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MakerSpace Projects – Links</title>
   <meta name="description" content="3D-Druckdateien, Baupläne und Schritt-für-Schritt-Anleitungen von MakerSpace Projects – alle Shops und Kanäle auf einen Blick.">
-  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#05080b">
+  <meta name="color-scheme" content="dark">
 
   <!-- Vorschau beim Teilen (z. B. in Instagram, WhatsApp) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="MakerSpace Projects">
   <meta property="og:description" content="3D-Druckdateien, Baupläne &amp; Anleitungen – alle Links auf einen Blick.">
   <meta property="og:url" content="https://makerspaceprojects.github.io/links/">
+  <meta property="og:image" content="https://makerspaceprojects.github.io/links/logo.jpg">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ea580c'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="logo.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
 
   <style>
+    /* Farben aus dem Logo: Schwarz, Silber, Cyan → Grün */
     :root {
-      --bg: #f3f1ec;
-      --grid: rgba(30, 40, 60, .06);
-      --card: #ffffff;
-      --card-hover: #fffaf5;
-      --text: #1b1d22;
-      --muted: #646a75;
-      --border: #e3dfd6;
-      --accent: #ea580c;
-      --accent-2: #f59e0b;
-      --accent-soft: #fdeee3;
-      --shadow: 0 1px 2px rgba(20,20,30,.05), 0 6px 20px rgba(20,20,30,.06);
-      --sketch: rgba(38, 64, 120, .22);
-      --sketch-accent: rgba(234, 88, 12, .35);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #14161a;
-        --grid: rgba(255, 255, 255, .04);
-        --card: #1d2026;
-        --card-hover: #23262d;
-        --text: #eef0f3;
-        --muted: #9aa1ad;
-        --border: #2c3038;
-        --accent: #fb923c;
-        --accent-2: #fbbf24;
-        --accent-soft: #2e231c;
-        --shadow: 0 1px 2px rgba(0,0,0,.35), 0 6px 20px rgba(0,0,0,.3);
-        --sketch: rgba(170, 195, 240, .14);
-        --sketch-accent: rgba(251, 146, 60, .28);
-      }
+      --bg: #05080b;
+      --grid: rgba(34, 211, 238, .045);
+      --card: rgba(16, 22, 28, .92);
+      --card-hover: rgba(20, 30, 36, .96);
+      --text: #e8edf1;
+      --muted: #8d9aa6;
+      --border: #1c2a33;
+      --accent: #22d3ee;      /* Cyan */
+      --accent-2: #7ed321;    /* Grün */
+      --accent-soft: rgba(34, 211, 238, .1);
+      --glow: 0 0 24px rgba(34, 211, 238, .25);
+      --shadow: 0 1px 2px rgba(0,0,0,.5), 0 8px 24px rgba(0,0,0,.45);
+      --sketch: rgba(150, 215, 235, .13);
+      --sketch-accent: rgba(126, 211, 33, .3);
     }
 
     * { box-sizing: border-box; }
@@ -62,11 +49,14 @@
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
       background-color: var(--bg);
-      /* Millimeterpapier-Raster als Maker-Hintergrund */
+      /* Farbschein wie im Logo + Raster als Maker-Hintergrund */
       background-image:
+        radial-gradient(ellipse 60% 40% at 15% 0%, rgba(34, 211, 238, .14), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 85% 100%, rgba(126, 211, 33, .12), transparent 70%),
         linear-gradient(var(--grid) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-      background-size: 24px 24px;
+      background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+      background-attachment: fixed;
       display: flex;
       justify-content: center;
       padding: 48px 16px 32px;
@@ -106,18 +96,23 @@
     /* ---------- Kopfbereich ---------- */
     header { text-align: center; margin-bottom: 28px; }
     .logo {
-      width: 104px; height: 104px; margin: 0 auto 16px;
-      border-radius: 28px;
+      width: 164px; height: 164px; margin: 0 auto 20px;
+      border-radius: 50%; padding: 3px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff;
-      display: grid; place-items: center;
-      font-size: 38px; font-weight: 800; letter-spacing: -.02em;
-      box-shadow: 0 10px 30px -8px rgba(234, 88, 12, .55);
-      transform: rotate(-4deg);
+      box-shadow: 0 0 40px -6px rgba(34, 211, 238, .45), 0 0 60px -10px rgba(126, 211, 33, .35);
     }
-    .logo img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
-    h1 { font-size: 1.6rem; margin: 0; letter-spacing: -.01em; }
-    .handle { color: var(--accent); font-weight: 600; font-size: .95rem; margin: 4px 0 12px; }
+    .logo img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #000; }
+    h1 {
+      font-size: 1.7rem; margin: 0; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .06em;
+      color: #dfe5ea;
+    }
+    h1 span {
+      display: block; font-size: .62em; letter-spacing: .38em; margin-top: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .handle { color: var(--accent); font-weight: 600; font-size: .95rem; margin: 8px 0 12px; }
     .bio { color: var(--muted); margin: 0 auto; line-height: 1.55; max-width: 36ch; }
 
     .socials { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
@@ -153,7 +148,7 @@
       box-shadow: var(--shadow);
       transition: transform .15s ease, border-color .15s ease, background-color .15s ease;
     }
-    .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); box-shadow: var(--shadow), var(--glow); }
     .link:active { transform: translateY(0) scale(.99); }
     a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -173,17 +168,17 @@
     /* Hervorgehobene Karte (Instagram) */
     .link.featured {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      border-color: transparent; color: #fff;
-      box-shadow: 0 10px 28px -10px rgba(234, 88, 12, .6);
+      border-color: transparent; color: #04141a;
+      box-shadow: 0 10px 30px -10px rgba(34, 211, 238, .55);
     }
-    .link.featured .icon { background: rgba(255,255,255,.2); color: #fff; }
-    .link.featured .label span, .link.featured .arrow { color: rgba(255,255,255,.85); }
-    .link.featured:hover { background: linear-gradient(135deg, var(--accent), var(--accent-2)); filter: brightness(1.05); }
-    .link.featured:hover .arrow svg { color: #fff; }
+    .link.featured .icon { background: rgba(0,0,0,.18); color: #04141a; }
+    .link.featured .label span, .link.featured .arrow { color: rgba(4,20,26,.75); }
+    .link.featured:hover { background: linear-gradient(135deg, var(--accent), var(--accent-2)); filter: brightness(1.08); }
+    .link.featured:hover .arrow svg { color: #04141a; }
 
     /* Links mit href="#" = Platzhalter → ausgegraut mit „bald“ */
     .link[href="#"] { opacity: .5; cursor: default; box-shadow: none; }
-    .link[href="#"]:hover { transform: none; border-color: var(--border); background: var(--card); }
+    .link[href="#"]:hover { transform: none; border-color: var(--border); background: var(--card); box-shadow: none; }
     .link[href="#"] .arrow svg { display: none; }
     .link[href="#"] .arrow::after {
       content: "bald"; font-size: .7rem; font-weight: 700;
@@ -305,12 +300,10 @@
 
   <main>
     <header>
-      <!-- Eigenes Logo: Datei logo.jpg ins Repo legen und die Zeile darunter ersetzen durch
-           <div class="logo"><img src="logo.jpg" alt="MakerSpace Projects Logo"></div> -->
-      <div class="logo" aria-hidden="true">MP</div>
-      <h1>MakerSpace Projects</h1>
+      <div class="logo"><img src="logo.jpg" alt="MakerSpace Projects Logo" width="158" height="158"></div>
+      <h1>MakerSpace <span>Projects</span></h1>
       <p class="handle">@makerspaceprojects</p>
-      <p class="bio">3D-Druckdateien, Baupläne &amp; Schritt-für-Schritt-Anleitungen für deine nächsten Projekte.</p>
+      <p class="bio">3D-Druck, Code, KI &amp; Werkstatt – Dateien und Schritt-für-Schritt-Anleitungen für deine nächsten Projekte.</p>
 
       <nav class="socials" aria-label="Social Media">
         <a href="https://www.instagram.com/makerspaceprojects" target="_blank" rel="noopener" aria-label="Instagram">
