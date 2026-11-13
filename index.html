@@ -3,110 +3,221 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meine Links</title>
-  <meta name="description" content="Alle meine Shops, Dateien und Anleitungen auf einen Blick.">
+  <title>MakerSpace Projects – Links</title>
+  <meta name="description" content="3D-Druckdateien, Baupläne und Schritt-für-Schritt-Anleitungen von MakerSpace Projects – alle Shops und Kanäle auf einen Blick.">
+  <meta name="theme-color" content="#f3f1ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+
+  <!-- Vorschau beim Teilen (z. B. in Instagram, WhatsApp) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MakerSpace Projects">
+  <meta property="og:description" content="3D-Druckdateien, Baupläne &amp; Anleitungen – alle Links auf einen Blick.">
+  <meta property="og:url" content="https://makerspaceprojects.github.io/links/">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ea580c'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+
   <style>
     :root {
-      --bg: #f4f1ec;
-      --bg-accent: #e9e3d8;
+      --bg: #f3f1ec;
+      --grid: rgba(30, 40, 60, .06);
       --card: #ffffff;
-      --text: #1f1d1a;
-      --muted: #6b655c;
-      --border: #e2dcd2;
-      --accent: #c2410c;
-      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(0,0,0,.06);
+      --card-hover: #fffaf5;
+      --text: #1b1d22;
+      --muted: #646a75;
+      --border: #e3dfd6;
+      --accent: #ea580c;
+      --accent-2: #f59e0b;
+      --accent-soft: #fdeee3;
+      --shadow: 0 1px 2px rgba(20,20,30,.05), 0 6px 20px rgba(20,20,30,.06);
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #171614;
-        --bg-accent: #211f1c;
-        --card: #24221f;
-        --text: #f2efe9;
-        --muted: #a39d93;
-        --border: #34312c;
+        --bg: #14161a;
+        --grid: rgba(255, 255, 255, .04);
+        --card: #1d2026;
+        --card-hover: #23262d;
+        --text: #eef0f3;
+        --muted: #9aa1ad;
+        --border: #2c3038;
         --accent: #fb923c;
-        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+        --accent-2: #fbbf24;
+        --accent-soft: #2e231c;
+        --shadow: 0 1px 2px rgba(0,0,0,.35), 0 6px 20px rgba(0,0,0,.3);
       }
     }
+
     * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
       margin: 0;
       min-height: 100vh;
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       color: var(--text);
-      background: radial-gradient(circle at 50% 0%, var(--bg-accent), var(--bg) 60%);
+      background-color: var(--bg);
+      /* Millimeterpapier-Raster als Maker-Hintergrund */
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 24px 24px;
       display: flex;
       justify-content: center;
-      padding: 56px 16px 40px;
+      padding: 48px 16px 32px;
     }
-    main { width: 100%; max-width: 520px; text-align: center; }
+    main { width: 100%; max-width: 480px; }
 
-    .avatar {
-      width: 96px; height: 96px; border-radius: 50%;
-      margin: 0 auto 16px;
-      background: var(--accent); color: #fff;
+    /* ---------- Kopfbereich ---------- */
+    header { text-align: center; margin-bottom: 28px; }
+    .logo {
+      width: 104px; height: 104px; margin: 0 auto 16px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
       display: grid; place-items: center;
-      font-size: 38px; font-weight: 700;
-      object-fit: cover;
-      box-shadow: var(--shadow);
+      font-size: 38px; font-weight: 800; letter-spacing: -.02em;
+      box-shadow: 0 10px 30px -8px rgba(234, 88, 12, .55);
+      transform: rotate(-4deg);
     }
-    h1 { font-size: 1.5rem; margin: 0 0 6px; }
-    .bio { color: var(--muted); margin: 0 0 32px; line-height: 1.5; }
+    .logo img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+    h1 { font-size: 1.6rem; margin: 0; letter-spacing: -.01em; }
+    .handle { color: var(--accent); font-weight: 600; font-size: .95rem; margin: 4px 0 12px; }
+    .bio { color: var(--muted); margin: 0 auto; line-height: 1.55; max-width: 36ch; }
 
+    .socials { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+    .socials a {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); box-shadow: var(--shadow);
+      transition: transform .15s ease, color .15s ease, border-color .15s ease;
+    }
+    .socials a:hover, .socials a:focus-visible { transform: translateY(-2px); color: var(--accent); border-color: var(--accent); }
+    .socials svg { width: 20px; height: 20px; }
+
+    /* ---------- Abschnitte ---------- */
     h2 {
-      font-size: .78rem; text-transform: uppercase; letter-spacing: .08em;
-      color: var(--muted); font-weight: 600;
-      margin: 28px 0 12px; text-align: left;
+      display: flex; align-items: center; gap: 10px;
+      font-size: .75rem; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); font-weight: 700;
+      margin: 28px 4px 12px;
     }
-    ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+    ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
 
+    /* ---------- Link-Karten ---------- */
     .link {
       display: flex; align-items: center; gap: 14px;
-      padding: 14px 16px;
+      padding: 12px 14px;
+      min-height: 68px;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      color: inherit; text-decoration: none; text-align: left;
+      border-radius: 16px;
+      color: inherit; text-decoration: none;
       box-shadow: var(--shadow);
-      transition: transform .15s ease, border-color .15s ease;
+      transition: transform .15s ease, border-color .15s ease, background-color .15s ease;
     }
-    .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
-    .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: var(--card-hover); }
+    .link:active { transform: translateY(0) scale(.99); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
     .icon {
-      flex: none; width: 40px; height: 40px; border-radius: 10px;
+      flex: none; width: 44px; height: 44px; border-radius: 12px;
       display: grid; place-items: center;
-      background: var(--bg-accent); color: var(--accent);
+      background: var(--accent-soft); color: var(--accent);
     }
     .icon svg { width: 22px; height: 22px; }
     .label { flex: 1; min-width: 0; }
     .label strong { display: block; font-size: 1rem; }
     .label span { display: block; font-size: .85rem; color: var(--muted); margin-top: 2px; }
-    .arrow { color: var(--muted); flex: none; }
+    .arrow { flex: none; color: var(--muted); display: grid; place-items: center; }
+    .arrow svg { width: 18px; height: 18px; transition: transform .15s ease; }
+    .link:hover .arrow svg { transform: translate(2px, -2px); color: var(--accent); }
 
-    /* Links, die noch auf "#" zeigen, werden als Platzhalter markiert */
-    .link[href="#"] { opacity: .55; cursor: default; }
-    .link[href="#"]:hover { transform: none; border-color: var(--border); }
-    .link[href="#"] .arrow::after {
-      content: "bald"; font-size: .72rem; font-weight: 600;
-      padding: 3px 8px; border-radius: 99px; background: var(--bg-accent);
+    /* Hervorgehobene Karte (Instagram) */
+    .link.featured {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-color: transparent; color: #fff;
+      box-shadow: 0 10px 28px -10px rgba(234, 88, 12, .6);
     }
-    .link[href="#"] .arrow svg { display: none; }
+    .link.featured .icon { background: rgba(255,255,255,.2); color: #fff; }
+    .link.featured .label span, .link.featured .arrow { color: rgba(255,255,255,.85); }
+    .link.featured:hover { background: linear-gradient(135deg, var(--accent), var(--accent-2)); filter: brightness(1.05); }
+    .link.featured:hover .arrow svg { color: #fff; }
 
-    footer { margin-top: 40px; font-size: .8rem; color: var(--muted); }
+    /* Links mit href="#" = Platzhalter → ausgegraut mit „bald“ */
+    .link[href="#"] { opacity: .5; cursor: default; box-shadow: none; }
+    .link[href="#"]:hover { transform: none; border-color: var(--border); background: var(--card); }
+    .link[href="#"] .arrow svg { display: none; }
+    .link[href="#"] .arrow::after {
+      content: "bald"; font-size: .7rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 99px;
+      background: var(--accent-soft); color: var(--accent);
+    }
+    .socials a[href="#"] { display: none; }
+
+    /* ---------- Fußbereich ---------- */
+    footer { margin-top: 36px; text-align: center; font-size: .8rem; color: var(--muted); }
+    .share {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-bottom: 18px; padding: 9px 16px;
+      font: inherit; font-size: .85rem; font-weight: 600;
+      color: var(--text); background: var(--card);
+      border: 1px solid var(--border); border-radius: 99px;
+      cursor: pointer; box-shadow: var(--shadow);
+    }
+    .share:hover { border-color: var(--accent); color: var(--accent); }
+    .share svg { width: 16px; height: 16px; }
+    footer p { margin: 4px 0; }
+    footer a { color: inherit; }
+
+    /* Sanftes Einblenden */
+    @media (prefers-reduced-motion: no-preference) {
+      header, h2, li, footer { animation: rise .5s ease both; }
+      li:nth-child(2) { animation-delay: .05s; }
+      li:nth-child(3) { animation-delay: .1s; }
+      li:nth-child(4) { animation-delay: .15s; }
+      @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+    }
   </style>
 </head>
 <body>
   <main>
-    <!-- PLATZHALTER: Initiale oder <img class="avatar" src="avatar.jpg" alt="Profilbild"> -->
-    <div class="avatar" aria-hidden="true">L</div>
-    <h1>Dein Name</h1>
-    <p class="bio">Kurze Beschreibung – z.&nbsp;B. „Druckdateien, Baupläne &amp; Schritt-für-Schritt-Anleitungen“</p>
+    <header>
+      <!-- Eigenes Logo: Datei logo.jpg ins Repo legen und die Zeile darunter ersetzen durch
+           <div class="logo"><img src="logo.jpg" alt="MakerSpace Projects Logo"></div> -->
+      <div class="logo" aria-hidden="true">MP</div>
+      <h1>MakerSpace Projects</h1>
+      <p class="handle">@makerspaceprojects</p>
+      <p class="bio">3D-Druckdateien, Baupläne &amp; Schritt-für-Schritt-Anleitungen für deine nächsten Projekte.</p>
+
+      <nav class="socials" aria-label="Social Media">
+        <a href="https://www.instagram.com/makerspaceprojects" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Patreon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Etsy">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+        </a>
+      </nav>
+    </header>
 
     <!--
-      LINKS ANPASSEN: Einfach href="#" durch die echte URL ersetzen.
-      Solange href="#" ist, wird der Eintrag ausgegraut mit „bald“ angezeigt.
+      LINKS ANPASSEN: href="#" durch die echte URL ersetzen.
+      Solange href="#" ist, erscheint der Eintrag ausgegraut mit „bald“
+      (und das Icon oben in der Social-Leiste wird ausgeblendet).
       Nicht benötigte Einträge komplett löschen (<li> … </li>).
     -->
+
+    <ul>
+      <li>
+        <a class="link featured" href="https://www.instagram.com/makerspaceprojects" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span>
+          <span class="label"><strong>Instagram</strong><span>Neue Projekte, Making-of &amp; Einblicke</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+    </ul>
 
     <h2>Unterstützen</h2>
     <ul>
@@ -114,14 +225,14 @@
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
           <span class="label"><strong>Patreon</strong><span>Exklusive Dateien &amp; Anleitungen für Unterstützer</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
       <li>
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span>
           <span class="label"><strong>Ko-fi</strong><span>Einmalig einen Kaffee spendieren</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
     </ul>
@@ -132,34 +243,66 @@
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
           <span class="label"><strong>Etsy</strong><span>Digitale Downloads &amp; Anleitungen</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
       <li>
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
           <span class="label"><strong>Gumroad</strong><span>Dateien direkt herunterladen</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
       <li>
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
           <span class="label"><strong>Payhip</strong><span>PDF-Anleitungen &amp; E-Books</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
       <li>
         <a class="link" href="#" target="_blank" rel="noopener">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg></span>
-          <span class="label"><strong>Cults3D / Printables / MakerWorld</strong><span>3D-Druckdateien</span></span>
-          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          <span class="label"><strong>Printables / MakerWorld / Cults3D</strong><span>3D-Druckdateien</span></span>
+          <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
       </li>
     </ul>
 
-    <footer>© <span id="y">2026</span> Dein Name</footer>
+    <footer>
+      <button class="share" type="button" id="share">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        <span>Seite teilen</span>
+      </button>
+      <p>© <span id="y">2026</span> MakerSpace Projects</p>
+    </footer>
   </main>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Platzhalter-Links nicht anklickbar machen
+    document.querySelectorAll('a[href="#"]').forEach(a => {
+      a.removeAttribute('target');
+      a.setAttribute('aria-disabled', 'true');
+      a.addEventListener('click', e => e.preventDefault());
+    });
+
+    // Teilen: natives Teilen-Menü auf dem Handy, sonst Link kopieren
+    const btn = document.getElementById('share');
+    const label = btn.querySelector('span');
+    btn.addEventListener('click', async () => {
+      const data = { title: document.title, url: location.href };
+      try {
+        if (navigator.share) { await navigator.share(data); return; }
+        await navigator.clipboard.writeText(location.href);
+        label.textContent = 'Link kopiert ✓';
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;
+        label.textContent = location.href;
+      }
+      setTimeout(() => (label.textContent = 'Seite teilen'), 2500);
+    });
+  </script>
 </body>
 </html>
