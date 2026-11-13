@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meine Links</title>
+  <meta name="description" content="Alle meine Shops, Dateien und Anleitungen auf einen Blick.">
+  <style>
+    :root {
+      --bg: #f4f1ec;
+      --bg-accent: #e9e3d8;
+      --card: #ffffff;
+      --text: #1f1d1a;
+      --muted: #6b655c;
+      --border: #e2dcd2;
+      --accent: #c2410c;
+      --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 14px rgba(0,0,0,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171614;
+        --bg-accent: #211f1c;
+        --card: #24221f;
+        --text: #f2efe9;
+        --muted: #a39d93;
+        --border: #34312c;
+        --accent: #fb923c;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 50% 0%, var(--bg-accent), var(--bg) 60%);
+      display: flex;
+      justify-content: center;
+      padding: 56px 16px 40px;
+    }
+    main { width: 100%; max-width: 520px; text-align: center; }
+
+    .avatar {
+      width: 96px; height: 96px; border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--accent); color: #fff;
+      display: grid; place-items: center;
+      font-size: 38px; font-weight: 700;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+    h1 { font-size: 1.5rem; margin: 0 0 6px; }
+    .bio { color: var(--muted); margin: 0 0 32px; line-height: 1.5; }
+
+    h2 {
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .08em;
+      color: var(--muted); font-weight: 600;
+      margin: 28px 0 12px; text-align: left;
+    }
+    ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+
+    .link {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      color: inherit; text-decoration: none; text-align: left;
+      box-shadow: var(--shadow);
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .link:hover, .link:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+    .link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .icon {
+      flex: none; width: 40px; height: 40px; border-radius: 10px;
+      display: grid; place-items: center;
+      background: var(--bg-accent); color: var(--accent);
+    }
+    .icon svg { width: 22px; height: 22px; }
+    .label { flex: 1; min-width: 0; }
+    .label strong { display: block; font-size: 1rem; }
+    .label span { display: block; font-size: .85rem; color: var(--muted); margin-top: 2px; }
+    .arrow { color: var(--muted); flex: none; }
+
+    /* Links, die noch auf "#" zeigen, werden als Platzhalter markiert */
+    .link[href="#"] { opacity: .55; cursor: default; }
+    .link[href="#"]:hover { transform: none; border-color: var(--border); }
+    .link[href="#"] .arrow::after {
+      content: "bald"; font-size: .72rem; font-weight: 600;
+      padding: 3px 8px; border-radius: 99px; background: var(--bg-accent);
+    }
+    .link[href="#"] .arrow svg { display: none; }
+
+    footer { margin-top: 40px; font-size: .8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- PLATZHALTER: Initiale oder <img class="avatar" src="avatar.jpg" alt="Profilbild"> -->
+    <div class="avatar" aria-hidden="true">L</div>
+    <h1>Dein Name</h1>
+    <p class="bio">Kurze Beschreibung – z.&nbsp;B. „Druckdateien, Baupläne &amp; Schritt-für-Schritt-Anleitungen“</p>
+
+    <!--
+      LINKS ANPASSEN: Einfach href="#" durch die echte URL ersetzen.
+      Solange href="#" ist, wird der Eintrag ausgegraut mit „bald“ angezeigt.
+      Nicht benötigte Einträge komplett löschen (<li> … </li>).
+    -->
+
+    <h2>Unterstützen</h2>
+    <ul>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+          <span class="label"><strong>Patreon</strong><span>Exklusive Dateien &amp; Anleitungen für Unterstützer</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span>
+          <span class="label"><strong>Ko-fi</strong><span>Einmalig einen Kaffee spendieren</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Shops – Dateien &amp; Anleitungen</h2>
+    <ul>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></span>
+          <span class="label"><strong>Etsy</strong><span>Digitale Downloads &amp; Anleitungen</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></span>
+          <span class="label"><strong>Gumroad</strong><span>Dateien direkt herunterladen</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+          <span class="label"><strong>Payhip</strong><span>PDF-Anleitungen &amp; E-Books</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+      <li>
+        <a class="link" href="#" target="_blank" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z"/><path d="M3.3 7 12 12l8.7-5M12 22V12"/></svg></span>
+          <span class="label"><strong>Cults3D / Printables / MakerWorld</strong><span>3D-Druckdateien</span></span>
+          <span class="arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+        </a>
+      </li>
+    </ul>
+
+    <footer>© <span id="y">2026</span> Dein Name</footer>
+  </main>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
