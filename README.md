@@ -10,5 +10,5 @@ Einträge mit `href="#"` erscheinen ausgegraut mit „bald“; ihr Icon in der S
 Patreon und Etsy stehen sowohl in der Social-Leiste oben als auch als Karte – beide Stellen anpassen.
 
 ## Logo
-`logo.jpg` (480 × 480 px) wird oben auf der Seite und als Vorschaubild beim Teilen genutzt,
+`logo.svg` (Vektor) wird oben auf der Seite genutzt, `logo.png` (512 px) als Vorschaubild beim Teilen,
 `favicon.png` als Symbol im Browser-Tab. Zum Austauschen einfach die Dateien mit gleichem Namen ersetzen.

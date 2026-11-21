@@ -13,10 +13,11 @@
   <meta property="og:title" content="MakerSpace Projects">
   <meta property="og:description" content="3D print files, build plans &amp; guides – all links in one place.">
   <meta property="og:url" content="https://makerspaceprojects.github.io/links/">
-  <meta property="og:image" content="https://makerspaceprojects.github.io/links/logo.jpg">
+  <meta property="og:image" content="https://makerspaceprojects.github.io/links/logo.png">
 
+  <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="logo.jpg">
+  <link rel="apple-touch-icon" href="logo.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -97,11 +98,10 @@
     header { text-align: center; margin-bottom: 28px; }
     .logo {
       width: 164px; height: 164px; margin: 0 auto 20px;
-      border-radius: 50%; padding: 3px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      box-shadow: 0 0 40px -6px rgba(34, 211, 238, .45), 0 0 60px -10px rgba(126, 211, 33, .35);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(239, 233, 223, .08), 0 12px 40px -8px rgba(0, 0, 0, .8), 0 0 50px -12px rgba(239, 233, 223, .25);
     }
-    .logo img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #000; }
+    .logo img { display: block; width: 100%; height: 100%; }
     h1 {
       font-size: 1.7rem; margin: 0; font-weight: 800;
       text-transform: uppercase; letter-spacing: .06em;
@@ -166,8 +166,8 @@
     .brand-patreon svg { width: 20px; height: 20px; }
     .brand-etsy      { background: #f1641e; }
     .brand-etsy svg  { width: 20px; height: 20px; }
-    .brand-own       { background: #000; overflow: hidden; padding: 0; box-shadow: 0 0 0 1px var(--accent), 0 0 14px -2px rgba(34, 211, 238, .5); }
-    .brand-own img   { width: 100%; height: 100%; object-fit: cover; border-radius: inherit; transform: scale(1.8) translateY(5%); }
+    .brand-own       { background: transparent; border-radius: 50%; padding: 0; box-shadow: 0 0 0 1px rgba(239, 233, 223, .15); }
+    .brand-own img   { display: block; width: 100%; height: 100%; }
     .link.featured .icon.brand-instagram { box-shadow: 0 2px 8px rgba(0,0,0,.25); color: #fff; }
 
     .label { flex: 1; min-width: 0; }
@@ -349,7 +349,7 @@
 
   <main>
     <header>
-      <div class="logo"><img src="logo.jpg" alt="MakerSpace Projects Logo" width="158" height="158"></div>
+      <div class="logo"><img src="logo.svg" alt="MakerSpace Projects Logo" width="164" height="164"></div>
       <h1>MakerSpace <span>Projects</span></h1>
       <p class="handle">@makerspaceprojects</p>
       <p class="bio" data-i18n="bio">3D printing, code, AI &amp; workshop – files and step-by-step guides for your next projects.</p>
@@ -390,7 +390,7 @@
       </li>
       <li>
         <a class="link" href="https://makerspaceprojects.de" target="_blank" rel="noopener">
-          <span class="icon brand-own"><img src="logo.jpg" alt="" width="44" height="44"></span>
+          <span class="icon brand-own"><img src="logo-mark.svg" alt="" width="44" height="44"></span>
           <span class="label"><strong>makerspaceprojects.de</strong><span data-i18n="website">Project blog – build logs, photos &amp; guides for every project</span></span>
           <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
         </a>
